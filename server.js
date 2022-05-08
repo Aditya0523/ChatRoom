@@ -7,7 +7,8 @@ const express = require('express') ;
 // socket is like an open door between client and server. We can emit events back and forth
 const socketio = require('socket.io') ;
 
-const PORT = 3000 || process.env.PORT;
+// const PORT = 3000 || process.env.PORT;
+const { PORT=3000, LOCAL_ADDRESS='0.0.0.0' } = process.env
 
 const app = express() ;
 const server = http.createServer(app) ;
@@ -18,9 +19,9 @@ const io = socketio(server) ;
 app.use(express.static(path.join(__dirname, 'public'))) ;
 const botName = 'Wassuuup bot' ;
 
-app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html')) ;
-})
+// app.get('*', (req,res) => {
+//     res.sendFile(path.resolve(__dirname, 'public', 'index.html')) ;
+// })
 
 //Run when client connects
 // io.on listens for an event ( here conncetion) and passes socket as parameter to an arrow function.
@@ -81,5 +82,7 @@ io.on('connection', socket => {
     })
 }) ;
 
-
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`)) ;
+server.listen(PORT, LOCAL_ADDRESS, () => {
+    const address = server.address() ;
+    console.log('server listening at', address) ;
+}) ;
