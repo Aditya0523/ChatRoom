@@ -7,6 +7,8 @@ const express = require('express') ;
 // socket is like an open door between client and server. We can emit events back and forth
 const socketio = require('socket.io') ;
 
+const PORT = 3000 || process.env.PORT;
+
 const app = express() ;
 const server = http.createServer(app) ;
 const io = socketio(server) ;
@@ -76,5 +78,4 @@ io.on('connection', socket => {
 }) ;
 
 
-const PORT = 3000 || process.env.PORT;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`)) ;
