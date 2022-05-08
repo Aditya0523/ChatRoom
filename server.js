@@ -13,10 +13,14 @@ const app = express() ;
 const server = http.createServer(app) ;
 const io = socketio(server) ;
 
+
 //Set static folder...to actually connect the html,css,js to the node
 app.use(express.static(path.join(__dirname, 'public'))) ;
 const botName = 'Wassuuup bot' ;
 
+app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html')) ;
+})
 
 //Run when client connects
 // io.on listens for an event ( here conncetion) and passes socket as parameter to an arrow function.
