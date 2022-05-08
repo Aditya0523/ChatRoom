@@ -1,0 +1,33 @@
+# Setting up the express server
+
+# Setting up static folder
+
+# Setting up our server to handle Socket.io
+ * Need "http" module for this
+ * create server with http module . Send in "app" as parameter
+ * listen using http server.
+ * require socket.io and pass server as parameter to socketio
+
+# Now listening to the event when client connects using io
+For event emitters click below
+https://nodejs.dev/learn/the-nodejs-event-emitter
+
+# Emit the message from server(server.js) and catch it in client side (main.js)
+ * welcome message
+ * type in the message
+ * when someone connects and disconnects
+
+# Implement the messaging. When we type msg and click send, we wanna then emit that to the server and then have it sent back so we can put it to the DOM.
+ * Grab hold of the input submitted through from
+ * emit the message from the client side 
+ * catch the message on the server side
+ * Broadcast to every client
+   % Making it appear on the message box using dom manipulation
+
+# Some issues left
+ * When a new message is sent , it should automatically scroll down
+ * Once send btn is clicked , the form should be clean and come to focus.
+ * Name and time formatting with messages
+
+# Now Users and Rooms
+ * Query strings : qs library

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Chat Room App</title>
+</head>
+
+<body>
+    <div class="join-container">
+        <header class="join-header">
+            <div class="join-header-name">
+                <img src="./wassup-nobg.png" alt="">
+                <h1>Wassuuup</h1>
+            </div>
+        </header>
+        <main class="join-main">
+            <form action="chat.html">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." required />
+                </div>
+                <div class="form-control">
+                    <label for="room">Room</label>
+                    <select name="room" id="room">
+                        <option value="Survey Corps">Survey Corps</option>
+                        <option value="Garrison">Garrison</option>
+                        <option value="Military Police">Military Police</option>
+                        <option value="Restorationist">Restorationist</option>
+                        <option value="Jaegarist">Jaegarist</option>
+                        <option value="Marley Military">Marley Military</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="font-weight: bold;">Join Chat</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
